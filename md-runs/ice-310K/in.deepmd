@@ -1,0 +1,4 @@
+# This is a deepmd model
+
+pair_style 	deepmd ../../train/frozen_model_1.pb
+pair_coeff	* *
