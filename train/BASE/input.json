@@ -1,0 +1,93 @@
+{
+    "_comment": "that's all",
+    "model": {
+    	"type_map":	["O","H"],
+        "descriptor": {
+            "type": "se_a",
+            "sel": [60, 90],
+            "rcut_smth": 3.0,
+            "rcut": 6.0,
+            "neuron": [
+                25,
+                50,
+                100
+            ],
+            "axis_neuron": 16,
+            "seed": SEED,
+            "_comment": " that's all"
+        },
+        "fitting_net": {
+            "neuron": [
+                120,
+                120,
+                120
+            ],
+            "resnet_dt": true,
+            "seed": SEED,
+            "_comment": " that's all"
+        },
+        "_comment": " that's all"
+    },
+    "learning_rate": {
+        "start_lr": 0.002,
+        "decay_steps": 5000,
+        "_comment": "that's all"
+    },
+    "loss": {
+        "start_pref_e": 0.02,
+        "limit_pref_e": 1,
+        "start_pref_f": 1000,
+        "limit_pref_f": 1,
+        "start_pref_v": 0,
+        "limit_pref_v": 0,
+        "_comment": " that's all"
+    },
+    "training": {
+        "stop_batch": 2000000,
+        "seed": SEED,
+        "_comment": "that's all",
+        "disp_file": "lcurve.out",
+        "disp_freq": 2000,
+        "numb_test": 5,
+        "save_freq": 20000,
+        "save_ckpt": "model.ckpt",
+        "disp_training": true,
+        "time_training": true,
+        "tensorboard": false,
+        "tensorboard_log_dir": "log",
+        "profiling": false,
+        "profiling_file": "timeline.json",
+        "validation_data": {
+            "systems": [
+		"../../training-data/3200bar-235K/LDL",
+		"../../training-data/1bar-265K",
+		"../../training-data/1bar-275K",
+		"../../training-data/1bar-290K",
+		"../../training-data/1bar-310K",
+		"../../training-data/crystallization/iceIh/3",
+		"../../training-data/crystallization/iceIc/3"
+            ],
+    	    "batch_size":	"auto"
+	},
+        "training_data": {
+            "systems": [
+		"../../training-data/3200bar-235K/HDL-LDL",
+		"../../training-data/multithermal",
+		"../../training-data/1bar-260K",
+		"../../training-data/1bar-270K",
+		"../../training-data/1bar-280K",
+		"../../training-data/1bar-300K",
+		"../../training-data/crystallization/iceIh/0",
+		"../../training-data/crystallization/iceIh/1",
+		"../../training-data/crystallization/iceIh/2",
+		"../../training-data/crystallization/iceIc/0",
+		"../../training-data/crystallization/iceIc/1",
+		"../../training-data/crystallization/iceIc/2",
+		"../../training-data/iteration-1",
+		"../../training-data/iteration-2",
+		"../../training-data/iteration-3"
+            ],
+    	    "batch_size":	"auto"
+        }
+    }
+}
